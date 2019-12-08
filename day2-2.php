@@ -4,7 +4,7 @@ function calc(array &$inputsArray)
     for ($i = 0; isset($inputsArray[($i + 4)]); $i += 4) {
         $opcode = intval($inputsArray[$i]);
 
-        if ($opcode === 99 || !in_array($opcode, [1,2,99])) {
+        if ($opcode === 99 || !in_array($opcode, [1,2])) {
             break;
         }
 
@@ -25,8 +25,7 @@ function calc(array &$inputsArray)
     }
 }
 
-
-$originalInputs = trim(file_get_contents('/Users/rodrigo/Development/advent-of-code-2019/inputs/day2.txt'));
+$originalInputs = trim(file_get_contents('./inputs/day2.txt'));
 
 $limit = 100;
 for ($noun = 0; $noun <= $limit; $noun++) {

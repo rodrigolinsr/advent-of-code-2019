@@ -4,7 +4,7 @@ function calc(array &$inputsArray)
     for ($i = 0; isset($inputsArray[($i + 4)]); $i += 4) {
         $opcode = intval($inputsArray[$i]);
 
-        if ($opcode === 99 || !in_array($opcode, [1,2,99])) {
+        if ($opcode === 99 || !in_array($opcode, [1,2])) {
             break;
         }
 
@@ -41,7 +41,7 @@ $example = [1,1,1,4,99,5,6,0,99];
 calc($example);
 var_dump($example);
 
-$inputs = trim(file_get_contents('/Users/rodrigo/Development/advent-of-code-2019/inputs/day2.txt'));
+$inputs = trim(file_get_contents('./inputs/day2.txt'));
 
 $inputsArray = explode(',', $inputs);
 $inputsArray[1] = 12;
